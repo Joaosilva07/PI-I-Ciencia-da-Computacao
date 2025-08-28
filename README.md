@@ -80,5 +80,5 @@ Depois de instalar o projeto, siga os passos abaixo:
 Agradecemos a todas as pessoas que contribuíram para este projeto:
 
 - [Bruno de Lima Marques](https://github.com/bruno.lmars)
-- [coloque seu nome -->](https://github.com/)
+- [Davi Pereira Araújo](https://github.com/Ovomexid0)
 - [coloque seu nome -->](https://github.com/)
