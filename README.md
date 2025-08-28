@@ -82,3 +82,4 @@ Agradecemos a todas as pessoas que contribuíram para este projeto:
 - [Bruno de Lima Marques](https://github.com/bruno.lmars)
 - [Davi Pereira Araújo](https://github.com/Ovomexid0)
 - [joão pedro nunes gomes da silva](https://github.com/joaosilva07)
+- [Luisa de Moura Zimmer](https://github.com/lulumishi)
