@@ -11,29 +11,41 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       body {
-        background-color: #f8f9fa; /* Cor de fundo suave */
+        background-color: #f8f9fa;
       }
       .container {
         padding-top: 2rem;
         padding-bottom: 2rem;
       }
       .card-header {
-        background-color: #0d6efd; /* Cor azul do Bootstrap */
+        background-color: #0d6efd;
         color: white;
       }
       .card {
         border: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+      .section-title {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .impact-card {
+        border-left: 4px solid #0d6efd;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="text-center mb-5">
-        <h1 class="display-4">Dashboard - O Problema da Educação Financeira</h1>
+        <h1 class="display-4">Dashboard - Educação Financeira</h1>
         <p class="lead">
           Dados que mostram a necessidade de letramento financeiro no Brasil.
         </p>
+      </div>
+
+      <div class="section-title">
+        <h2>O Problema da Educação Financeira</h2>
       </div>
 
       <div class="row g-4 mb-5 justify-content-center">
@@ -50,9 +62,7 @@
         </div>
         <div class="col-md-4">
           <div class="card text-center">
-            <div class="card-header">
-              <h5 class="m-0">Inadimplentes</h5>
-            </div>
+            <div class="card-header"><h5 class="m-0">Inadimplentes</h5></div>
             <div class="card-body">
               <h4 class="card-text">70,29 milhões</h4>
               <p class="card-text text-muted">
@@ -63,9 +73,7 @@
         </div>
         <div class="col-md-4">
           <div class="card text-center">
-            <div class="card-header">
-              <h5 class="m-0">Dívida Média</h5>
-            </div>
+            <div class="card-header"><h5 class="m-0">Dívida Média</h5></div>
             <div class="card-body">
               <h4 class="card-text">R$ 1.588</h4>
               <p class="card-text text-muted">em maio de 2025.</p>
@@ -186,11 +194,92 @@
           </div>
         </div>
       </div>
+
+      <div class="section-title">
+        <h2>Nosso Auxiliador de Investimentos</h2>
+        <p class="lead">
+          Como nossa solução ajuda a resolver a falta de educação financeira
+        </p>
+      </div>
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card impact-card text-center p-3">
+            <h5>Educação em Juros e Empréstimos</h5>
+            <p>
+              Ensina sobre juros simples e compostos, empréstimos e
+              financiamentos para evitar decisões financeiras ruins.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card impact-card text-center p-3">
+            <h5>Educação em Investimentos</h5>
+            <p>
+              Guias interativos sobre poupança, ações e fundos de investimento.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card impact-card text-center p-3">
+            <h5>Simulação de Impacto</h5>
+            <p>
+              Projeta quanto você pode poupar e investir em 6, 12 ou 24 meses.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Projeção de Melhora com a Solução</h2>
+      </div>
+      <div class="row g-4 mb-5 justify-content-center">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">
+              <h5 class="m-0">Planejamento de Aposentadoria</h5>
+            </div>
+            <div class="card-body">
+              <h4 class="card-text">+15%</h4>
+              <p class="card-text text-muted">
+                expectativa de pessoas mais preparadas financeiramente para o
+                futuro.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">
+              <h5 class="m-0">Redução de Dívidas</h5>
+            </div>
+            <div class="card-body">
+              <h4 class="card-text">-20%</h4>
+              <p class="card-text text-muted">
+                projeção após acompanhamento com nosso sistema.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">
+              <h5 class="m-0">Maior Educação Financeira</h5>
+            </div>
+            <div class="card-body">
+              <h4 class="card-text">+25 pts</h4>
+              <p class="card-text text-muted">
+                melhora na pontuação de letramento financeiro.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-      //Evolução do Endividamento
+      // Gráfico Evolução do Endividamento
       const ctx1 = document.getElementById("graficoEvolucao");
       new Chart(ctx1, {
         type: "line",
@@ -224,17 +313,10 @@
             },
           ],
         },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: false,
-            },
-          },
-        },
+        options: { responsive: true, scales: { y: { beginAtZero: false } } },
       });
 
-      //Causas das Dívidas
+      // Gráfico Tipos de Dívida
       const ctx2 = document.getElementById("graficoCausas");
       new Chart(ctx2, {
         type: "doughnut",
@@ -247,7 +329,6 @@
           ],
           datasets: [
             {
-              label: "Percentual",
               data: [84.5, 16.8, 10.6, 5.5],
               backgroundColor: ["#0d6efd", "#6c757d", "#adb5bd", "#dee2e6"],
               hoverOffset: 4,
@@ -256,15 +337,11 @@
         },
         options: {
           responsive: true,
-          plugins: {
-            legend: {
-              position: "bottom",
-            },
-          },
+          plugins: { legend: { position: "bottom" } },
         },
       });
 
-      //Reserva de Emergência
+      // Gráfico Reserva de Emergência
       const ctx3 = document.getElementById("graficoReserva");
       new Chart(ctx3, {
         type: "bar",
@@ -278,7 +355,6 @@
           ],
           datasets: [
             {
-              label: "Percentual da População",
               data: [67, 10, 10, 6, 6],
               backgroundColor: [
                 "#dc3545",
@@ -287,91 +363,47 @@
                 "#007bff",
                 "#6f42c0",
               ],
-              borderColor: [
-                "#dc3545",
-                "#ffc107",
-                "#28a745",
-                "#007bff",
-                "#6f42c0",
-              ],
-              borderWidth: 1,
             },
           ],
         },
         options: {
           responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
+          scales: { y: { beginAtZero: true } },
+          plugins: { legend: { display: false } },
         },
       });
 
-      //Aposentadoria Privada
+      // Gráfico Aposentadoria Privada
       const ctx4 = document.getElementById("graficoAposentadoria");
       new Chart(ctx4, {
         type: "bar",
         data: {
           labels: ["Possuem", "Não Possuem"],
           datasets: [
-            {
-              label: "Percentual da População",
-              data: [7, 93],
-              backgroundColor: ["#0d6efd", "#dc3545"],
-              borderColor: ["#0d6efd", "#dc3545"],
-              borderWidth: 1,
-            },
+            { data: [7, 93], backgroundColor: ["#0d6efd", "#dc3545"] },
           ],
         },
         options: {
           responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
+          scales: { y: { beginAtZero: true } },
+          plugins: { legend: { display: false } },
         },
       });
 
-      //Inadimplência por Gênero
+      // Gráfico Inadimplência por Gênero
       const ctx5 = document.getElementById("graficoGenero");
       new Chart(ctx5, {
         type: "bar",
         data: {
           labels: ["Masculino", "Feminino"],
           datasets: [
-            {
-              label: "Inadimplentes (%)",
-              data: [76, 76.9],
-              backgroundColor: ["#0d6efd", "#dc3545"],
-              borderColor: ["#0d6efd", "#dc3545"],
-              borderWidth: 1,
-            },
+            { data: [76, 76.9], backgroundColor: ["#0d6efd", "#dc3545"] },
           ],
         },
         options: {
           responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
+          scales: { y: { beginAtZero: true } },
+          plugins: { legend: { display: false } },
         },
       });
     </script>
