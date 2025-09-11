@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Bolsas Financeiras</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Gráfico */
+    svg {
+      width: 100%;
+      height: 120px;
+      overflow: visible;
+    }
+
+    .line {
+      fill: none;
+      stroke: #0d6efd;
+      stroke-width: 3;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .point {
+      fill: #0d6efd;
+      stroke: white;
+      stroke-width: 3;
+      transition: fill 0.3s;
+    }
+    .point:hover {
+      fill: #084298;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Dashboard Bolsas Financeiras</h1>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard-tab-pane" type="button" role="tab" aria-controls="dashboard-tab-pane" aria-selected="true">Dashboard</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="aprender-tab" data-bs-toggle="tab" data-bs-target="#aprender-tab-pane" type="button" role="tab" aria-controls="aprender-tab-pane" aria-selected="false">Quero aprender</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <!-- Dashboard Tab -->
+    <div class="tab-pane fade show active" id="dashboard-tab-pane" role="tabpanel" aria-labelledby="dashboard-tab" tabindex="0">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="dashboard">
+          <!-- Cards gerados por JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Quero aprender Tab -->
+    <div class="tab-pane fade" id="aprender-tab-pane" role="tabpanel" aria-labelledby="aprender-tab" tabindex="0">
+      <div class="container">
+        <div class="p-4 bg-white rounded shadow-sm">
+          <h3>Quero aprender a investir</h3>
+          <p>Bem-vindo à seção "Quero aprender"! Aqui você encontrará conteúdos e dicas para começar a investir com segurança e conhecimento.</p>
+          <ul>
+            <li><strong>Fundamentos do investimento</strong>: o que são ações, renda fixa, fundos imobiliários, e mais.</li>
+            <li><strong>Como montar uma carteira diversificada</strong> para reduzir riscos.</li>
+            <li><strong>Dicas para iniciantes</strong>: controlar emoções, entender o mercado e aprender com os erros.</li>
+            <li><strong>Glossário financeiro</strong>: termos essenciais explicados de forma simples.</li>
+          </ul>
+          <p>Fique ligado para futuras atualizações com vídeos, artigos e simuladores!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle CDN (popper + bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Dados simulados das bolsas e seus dados para gráficos
+    const bolsas = [
+      { nome: 'B3 (Brasil)', dados: [12000, 12100, 11950, 12200, 12150, 12300, 12450] },
+      { nome: 'NASDAQ (EUA)', dados: [13000, 13150, 13200, 13350, 13200, 13400, 13500] },
+      { nome: 'NYSE (EUA)', dados: [15000, 14900, 14950, 15100, 15050, 15200, 15300] },
+      { nome: 'LSE (Londres)', dados: [7100, 7150, 7130, 7200, 7180, 7220, 7250] },
+      { nome: 'TSE (Tóquio)', dados: [29000, 29150, 28900, 29200, 29300, 29500, 29650] },
+      { nome: 'SSE (Xangai)', dados: [3300, 3350, 3320, 3360, 3380, 3400, 3420] }
+    ];
+
+    const dashboard = document.getElementById('dashboard');
+
+    function criarGrafico(dados) {
+      const largura = 260;
+      const altura = 120;
+      const padding = 20;
+
+      const maxVal = Math.max(...dados);
+      const minVal = Math.min(...dados);
+
+      const pontos = dados.map((val, i) => {
+        const x = padding + (i * ((largura - 2 * padding) / (dados.length - 1)));
+        const y = altura - padding - ((val - minVal) / (maxVal - minVal)) * (altura - 2 * padding);
+        return { x, y };
+      });
+
+      const pathD = pontos.reduce((acc, p, i) => {
+        return acc + (i === 0 ? `M${p.x} ${p.y}` : ` L${p.x} ${p.y}`);
+      }, '');
+
+      const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', `0 0 ${largura} ${altura}`);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', 'Gráfico de linha');
+
+      const path = document.createElementNS(svgNS, 'path');
+      path.setAttribute('d', pathD);
+      path.setAttribute('class', 'line');
+      svg.appendChild(path);
+
+      pontos.forEach(p => {
+        const circle = document.createElementNS(svgNS, 'circle');
+        circle.setAttribute('cx', p.x);
+        circle.setAttribute('cy', p.y);
+        circle.setAttribute('r', 5);
+        circle.setAttribute('class', 'point');
+        svg.appendChild(circle);
+      });
+
+      return svg;
+    }
+
+    bolsas.forEach(bolsa => {
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      const card = document.createElement('div');
+      card.className = 'card p-3 h-100';
+
+      const titulo = document.createElement('h5');
+      titulo.className = 'card-title';
+      titulo.textContent = bolsa.nome;
+
+      const grafico = criarGrafico(bolsa.dados);
+
+      card.appendChild(titulo);
+      card.appendChild(grafico);
+      col.appendChild(card);
+      dashboard.appendChild(col);
+    });
+  </script>
+
+</body>
+</html>
