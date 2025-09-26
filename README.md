@@ -79,8 +79,8 @@ Depois de instalar o projeto, siga os passos abaixo:
 
 Agradecemos a todas as pessoas que contribuíram para este projeto:
 
-- [Bruno de Lima Marques](https://github.com/bruno.lmars)
-- [Caue Muniz Anastacio](https://github.com/Catadordegames)
-- [Davi Pereira Araújo](https://github.com/Ovomexid0)
-- [joão pedro nunes gomes da silva](https://github.com/joaosilva07)
-- [Luisa de Moura Zimmer](https://github.com/lulumishi)
+- [Bruno de Lima Marques](https://github.com/bruno.lmars)(Gerente de Projeto)
+- [Caue Muniz Anastacio](https://github.com/Catadordegames)(Pesquisador)
+- [Davi Pereira Araújo](https://github.com/Ovomexid0)(QA/tester)
+- [joão pedro nunes gomes da silva](https://github.com/joaosilva07)(Desenvolvedor)
+- [Luisa de Moura Zimmer](https://github.com/lulumishi)(Designer)
