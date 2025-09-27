@@ -44,11 +44,51 @@ Nosso objetivo não é apenas falar de números, mas ensinar as pessoas a tomare
 
 ---
 
+## 📌 Metodologia e Framework Scrum
+
+O projeto adota o **Scrum** como **framework ágil** de gerenciamento e desenvolvimento.  
+O Scrum é um **framework leve, iterativo e incremental**, voltado para gerar valor de forma contínua ao produto e ao cliente.
+
+### 🏗 Estrutura do Framework Scrum
+
+- **Papéis (Roles):**
+
+  - **Product Owner (PO) (Bruno de Lima Marques):** Responsável pelo valor do produto e pelo gerenciamento do backlog.
+  - **Scrum Master(João Pedro Nunes):** Garante que o framework Scrum seja compreendido e aplicado corretamente.
+  - **Time de Desenvolvimento:** Profissionais que entregam incrementos do produto a cada sprint.
+
+- **Eventos (Cerimônias):**
+
+  - **Sprint:** Ciclo de tempo fixo (time-box) em que um incremento é desenvolvido (1 semanas).
+  - **Sprint Planning:** Planejamento dos objetivos e tarefas da sprint.
+  - **Daily Scrum:** Reunião semanais de 20 minutos a 1 hora para alinhamento da equipe.
+  - **Sprint Review:** Inspeção e demonstração do incremento desenvolvido.
+  - **Sprint Retrospective:** Análise do processo e melhorias para o próximo ciclo.
+
+- **Artefatos:**
+  - **Product Backlog:** Lista priorizada de tudo que deve ser feito no projeto.
+  - **Sprint Backlog:** Conjunto de itens do backlog selecionados para a sprint atual.
+  - **Incremento:** Entrega funcional do produto ao final da sprint.
+
+### 📊 Adaptação do Framework ao Projeto
+
+- **Sprints:** Duração de 1 semanas cada.
+- **Ferramentas de Gestão:** GitHub Projects para controle do backlog, issues e progresso.
+- **Definição de Pronto (DoD):** Cada funcionalidade só é considerada concluída após ser implementada, testada e documentada.
+- **Definição de Feito (DoR):** Uma tarefa só entra na sprint se estiver claramente definida e com critérios de aceitação.
+
+Com o uso do **framework Scrum**, conseguimos organizar o fluxo de trabalho, priorizar entregas e garantir a evolução contínua do projeto com transparência e colaboração.
+
 ## 🛠️ Tecnologias Utilizadas
 
-- **Linguagem/Framework Principal:** (coloque aqui -->)
+- **Linguagem/Framework Principal:** Python, Html, CSS, JavaScript
 - **Banco de Dados:** (se houver -->)
-- **APIs externas:** (coloque aqui -->)
+- **APIs externas:**
+
+  - API BCB (Banco Central do Brasil)
+  - API CMV (Custo de Mercadoria Vendida)
+  - New API
+
 - **Outras bibliotecas/ferramentas utilizadas no desenvolvimento:** (coloque aqui -->)
 
 ---
@@ -62,6 +102,10 @@ Coloque aqui os pré-requisitos necessários (ex: Node.js, Python, Git, etc.)
 ### 🔽 Passos
 
 Siga os passos abaixo para rodar o projeto localmente:
+
+```bash
+pip install request
+
 
 (colocaremos a instrução aqui abaixo)
 
@@ -84,3 +128,4 @@ Agradecemos a todas as pessoas que contribuíram para este projeto:
 - [Davi Pereira Araújo](https://github.com/Ovomexid0)(QA/tester)
 - [joão pedro nunes gomes da silva](https://github.com/joaosilva07)(Desenvolvedor)
 - [Luisa de Moura Zimmer](https://github.com/lulumishi)(Designer)
+```
