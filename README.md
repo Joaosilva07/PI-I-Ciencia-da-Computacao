@@ -103,10 +103,7 @@ Coloque aqui os pré-requisitos necessários (ex: Node.js, Python, Git, etc.)
 
 Siga os passos abaixo para rodar o projeto localmente:
 
-```bash
 pip install request
-'''
-
 
 (colocaremos a instrução aqui abaixo)
 
@@ -129,4 +126,7 @@ Agradecemos a todas as pessoas que contribuíram para este projeto:
 - [Davi Pereira Araújo](https://github.com/Ovomexid0)(QA/tester)
 - [joão pedro nunes gomes da silva](https://github.com/joaosilva07)(Desenvolvedor)
 - [Luisa de Moura Zimmer](https://github.com/lulumishi)(Designer)
+
+```
+
 ```
