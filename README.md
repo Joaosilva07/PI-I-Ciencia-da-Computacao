@@ -103,8 +103,6 @@ Coloque aqui os pré-requisitos necessários (ex: Node.js, Python, Git, etc.)
 
 Siga os passos abaixo para rodar o projeto localmente:
 
-pip install request
-
 (colocaremos a instrução aqui abaixo)
 
 ---
