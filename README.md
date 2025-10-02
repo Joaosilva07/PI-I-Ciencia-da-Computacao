@@ -97,7 +97,7 @@ Com o uso do **framework Scrum**, conseguimos organizar o fluxo de trabalho, pri
 
 ### 📋 Pré-requisitos
 
-Coloque aqui os pré-requisitos necessários (ex: Node.js, Python, Git, etc.)
+(colocaremos a instrução aqui abaixo)
 
 ### 🔽 Passos
 
@@ -109,9 +109,7 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 ## 🚀 Como Usar
 
-Depois de instalar o projeto, siga os passos abaixo:
-
-(coloque aqui abaixo)
+(colocaremos a instrução aqui abaixo)
 
 ---
 
